@@ -169,3 +169,5 @@ Where `$TABLE` is the name that you want to give to the final table that will be
 This table will be created partitioned by the column timestamp (specifices the datetime of the data point), and will by clustered by the column country, as the majority of analyzis for this table will be made in terms of geographical aggregation.
 
 ## Transformations in DBT
+This part is developed on DBT Cloud. The instructions to set up a DBT Cloud account and setup it with Big Query can be found (here)[https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md].
+
