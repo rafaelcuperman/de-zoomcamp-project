@@ -33,6 +33,16 @@ resource "google_bigquery_dataset" "mental-health-bq" {
   location   = var.location
 }
 
+resource "google_bigquery_dataset-dbt-staging" "dbt-staging-bq" {
+  dataset_id = dbt_mental_health
+  location   = var.location
+}
+
+resource "google_bigquery_dataset-dbt-prod" "dbt-prod-bq" {
+  dataset_id = mental_head_prod
+  location   = var.location
+}
+
 resource "google_compute_instance" "de-zoomcamp-project-vm" {
   name         = var.vm_name
   machine_type = var.vm_machine_type
