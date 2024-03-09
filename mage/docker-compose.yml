@@ -1,0 +1,17 @@
+version: '3'
+services:
+  magic:
+    image: mageai/mageai:latest
+    command: mage start de-zoomcamp-project
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      USER_CODE_PATH: /home/src/de-zoomcamp-project
+    ports:
+      - 6789:6789
+    volumes:
+      - .:/home/src/
+      - ../.cred.json:/home/src/.cred.json
+      - ../kaggle.json:/home/src/kaggle.json
+    restart: on-failure:5
