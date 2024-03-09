@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: staging
+    database: de-zoomcamp-project-416612
+    schema: mental_health
+
+    tables:
+      - name: mental_health
