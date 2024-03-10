@@ -171,3 +171,8 @@ This table will be created partitioned by the column timestamp (specifices the d
 ## Transformations in DBT
 This part is developed on DBT Cloud. The instructions to set up a DBT Cloud account and setup it with Big Query can be found (here)[https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md].
 
+Open the dbt project and run the job so that the dbt pipeline is executed. When executed, you will get the final table `mental_health` in the production database and also some staging views in the staging database.
+
+## Visualization in Looker Studio
+You can now use the final table `mental_health` to create visualizations. Take for example (this one)[https://lookerstudio.google.com/reporting/84668474-c8a3-47be-a79f-af08a5ce19ce].
+

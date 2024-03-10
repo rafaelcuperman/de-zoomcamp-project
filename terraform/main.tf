@@ -31,16 +31,19 @@ resource "google_storage_bucket" "mental-health-bucket" {
 resource "google_bigquery_dataset" "mental-health-bq" {
   dataset_id = var.bq_dataset_name
   location   = var.location
+  delete_contents_on_destroy = true
 }
 
-resource "google_bigquery_dataset-dbt-staging" "dbt-staging-bq" {
+resource "google_bigquery_dataset" "dbt-staging-bq" {
   dataset_id = dbt_mental_health
   location   = var.location
+  delete_contents_on_destroy = true
 }
 
-resource "google_bigquery_dataset-dbt-prod" "dbt-prod-bq" {
-  dataset_id = mental_head_prod
+resource "google_bigquery_dataset" "dbt-prod-bq" {
+  dataset_id = mental_health_prod
   location   = var.location
+  delete_contents_on_destroy = true
 }
 
 resource "google_compute_instance" "de-zoomcamp-project-vm" {
