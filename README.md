@@ -109,7 +109,7 @@ git clone REPO_URL_HTTPS
 ## Mage
 This part is needed to ingest data and save it in GCS and Big Query. 
 
-As we will be using a Dataset from Kaggle, we must first dowload the Kaggle API user and token, so that we can download the needed data in the pipeline. To do so, go to your user profile in (Kaggle)[kaggle.com], then settings, and then, under API, click on "Create New Token". This will download a json file called `kaggle.json` with your private username and token. Save that file in the working directory of the project with the name `kaggle.json`.
+As we will be using a Dataset from Kaggle, we must first dowload the Kaggle API user and token, so that we can download the needed data in the pipeline. To do so, go to your user profile in [Kaggle](kaggle.com), then settings, and then, under API, click on "Create New Token". This will download a json file called `kaggle.json` with your private username and token. Save that file in the working directory of the project with the name `kaggle.json`.
 
 Note: if you are working in the VM, you must first copy the `kaggle.json` file to the VM. This can me done with the command
 ```bash
@@ -169,10 +169,16 @@ Where `$TABLE` is the name that you want to give to the final table that will be
 This table will be created partitioned by the column timestamp (specifices the datetime of the data point), and will by clustered by the column country, as the majority of analyzis for this table will be made in terms of geographical aggregation.
 
 ## Transformations in DBT
-This part is developed on DBT Cloud. The instructions to set up a DBT Cloud account and setup it with Big Query can be found (here)[https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md].
+This part is developed on DBT Cloud. The instructions to set up a DBT Cloud account and setup it with Big Query can be found [here](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/04-analytics-engineering/dbt_cloud_setup.md).
 
 Open the dbt project and run the job so that the dbt pipeline is executed. When executed, you will get the final table `mental_health` in the production database and also some staging views in the staging database.
 
+The lineage is as follows:
+
+![lineage](images/dbt_lineage.png)
+
 ## Visualization in Looker Studio
-You can now use the final table `mental_health` to create visualizations. Take for example (this one)[https://lookerstudio.google.com/reporting/84668474-c8a3-47be-a79f-af08a5ce19ce].
+You can now use the final table `mental_health` to create visualizations. Take for example [this one](https://lookerstudio.google.com/reporting/84668474-c8a3-47be-a79f-af08a5ce19ce).
+
+![looker](images/looker.png)
 
